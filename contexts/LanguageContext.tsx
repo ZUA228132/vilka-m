@@ -36,7 +36,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     const loadTranslations = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`./locales/${language}.json`);
+        // FIX: Use absolute path for Vercel deployment
+        const response = await fetch(`/locales/${language}.json`);
         if (!response.ok) {
           throw new Error(`Failed to load locale file for: ${language}`);
         }
@@ -69,7 +70,10 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const t = (key: string, options: { returnObjects?: boolean } = {}): any => {
     if (isLoading || !translations) {
       // During load, return an empty value to prevent crashes (e.g., from .map)
-      return options.returnObjects ? [] : '';
+      // or return the key itself for debugging.
+      const value = getNestedValue(translations, key);
+      if (value) return value; // Return value if already loaded
+      return options.returnObjects ? [] : key;
     }
     
     const value = getNestedValue(translations, key);
