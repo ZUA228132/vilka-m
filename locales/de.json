@@ -1,0 +1,128 @@
+{
+  "header": {
+    "connectionStatus": "Verbindung gesichert",
+    "nav": {
+      "features": "Funktionen",
+      "security": "Sicherheit",
+      "testimonials": "Bewertungen"
+    },
+    "cta": "Starten"
+  },
+  "hero": {
+    "badge": "Der private Messenger der nächsten Generation",
+    "title": {
+      "line1": "Kommunikation,",
+      "line2": "gestärkt und neu gedacht."
+    },
+    "description": "Vilka ist die Synergie aus modernster Verschlüsselung und einer intuitiven Benutzeroberfläche. Kommunizieren Sie frei, in dem Wissen, dass Ihre Privatsphäre unsere unumstößliche Priorität ist.",
+    "ctaPrimary": "Sicher herunterladen",
+    "ctaSecondary": "Mehr erfahren",
+    "chatHeader": {
+      "name": "Alice",
+      "status": "online"
+    },
+    "chatMessages": [
+      { "text": "Bist du sicher, dass es hier sicher ist?", "isSender": false, "delay": 0.5 },
+      { "text": "Absolut. Ende-zu-Ende-Verschlüsselung, niemand kann das lesen.", "isSender": true, "delay": 1.5 },
+      { "text": "Großartig! Nicht einmal Metadaten?", "isSender": false, "delay": 2.5 }
+    ],
+    "finalMessage": { "text": "Ja, Vilka speichert nichts. Völlige Anonymität.", "isSender": true, "delay": 4.5 }
+  },
+  "features": {
+    "title": "Der neue Standard der Privatsphäre",
+    "description": "Vilka ist nicht nur ein weiterer Messenger. Es ist eine Festung für Ihre Gedanken, gebaut mit kompromisslosen Sicherheitsfunktionen.",
+    "cards": [
+      {
+        "title": "Quantenresistente Verschlüsselung",
+        "description": "Unser Ende-zu-Ende-Verschlüsselungsprotokoll schützt vor den Bedrohungen von heute und morgen und sichert Ihre Daten vor jedem Angriff."
+      },
+      {
+        "title": "Dezentrales Netzwerk",
+        "description": "Vilka läuft auf einem P2P-Netzwerk, was bedeutet, dass es keine zentralen Server gibt, auf denen Daten gespeichert werden. Ihre Gespräche gehören nur Ihnen."
+      },
+      {
+        "title": "Vollständige Anonymität",
+        "description": "Registrieren Sie sich ohne Telefonnummer oder E-Mail. Ihre Identität wird niemals mit Ihrem Konto verknüpft, was absolute Privatsphäre gewährleistet."
+      },
+      {
+        "title": "Blitzschnelle Geschwindigkeit",
+        "description": "Vilka ist auf maximale Leistung ausgelegt, liefert Nachrichten sofort und verbraucht weder Akku noch überflüssige Daten."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Unzerbrechlicher Schild",
+    "title": "Sicherheit als Standard, nicht als Kompromiss.",
+    "description": "Von der allerersten Codezeile an wurde Vilka nach einem Zero-Trust-Modell entwickelt. Jede Nachricht, jeder Anruf und jede Datei wird mit einem eigenen einzigartigen Schlüssel in einem Double-Ratchet-System verschlüsselt, was perfekte Forward Secrecy bietet.",
+    "points": [
+      { "text": "<strong>Keine Metadaten:</strong> Wir wissen nicht, mit wem, wann oder wie lange Sie kommunizieren." },
+      { "text": "<strong>Open Source:</strong> Unser Code ist transparent und wird regelmäßig von unabhängigen Sicherheitsexperten überprüft." },
+      { "text": "<strong>IP-Adressen-Maskierung:</strong> Schützen Sie Ihren Standort und Ihre Identität mit integrierten Onion-Routing-Funktionen." }
+    ]
+  },
+  "testimonials": {
+    "title": "Vertraut von Datenschutz-Experten",
+    "description": "Verlassen Sie sich nicht nur auf unser Wort. Hören Sie, was Branchenexperten und datenschutzbewusste Benutzer über Vilka sagen.",
+    "cards": [
+      {
+        "quote": "Ich habe alle 'sicheren' Messenger ausprobiert. Vilka ist der erste, der das Versprechen absoluter Privatsphäre wirklich einhält. Das ist unbezahlbar.",
+        "name": "Alex Schmidt",
+        "title": "Cybersecurity-Analyst",
+        "avatarUrl": "https://picsum.photos/seed/person1/100/100"
+      },
+      {
+        "quote": "Die Benutzeroberfläche ist unglaublich sauber und intuitiv, was ich von einer so sicherheitsorientierten App nicht erwartet hätte. Sie ist leistungsstark und angenehm zu bedienen.",
+        "name": "Maria Meier",
+        "title": "UX/UI-Designerin",
+        "avatarUrl": "https://picsum.photos/seed/person2/100/100"
+      },
+      {
+        "quote": "Als Journalist ist der Schutz meiner Quellen von größter Bedeutung. Vilkas Dezentralisierung und anonyme Registrierung haben meine Arbeit grundlegend verändert.",
+        "name": "Dmitri Weber",
+        "title": "Investigativjournalist",
+        "avatarUrl": "https://picsum.photos/seed/person3/100/100"
+      }
+    ]
+  },
+  "download": {
+    "title": "Schließen Sie sich der Sicherheitsrevolution an.",
+    "description": "Holen Sie sich die Kontrolle über Ihre digitalen Gespräche zurück. Laden Sie Vilka noch heute herunter und erleben Sie echte Privatsphäre bei der Kommunikation auf Ihrer Lieblingsplattform.",
+    "ios": {
+      "soon": "Bald im"
+    },
+    "apk": {
+      "direct": "Direkt herunterladen",
+      "file": "APK-Datei"
+    },
+    "rustore": {
+      "available": "VERFÜGBAR IN"
+    },
+    "androidRequirement": "Erfordert Android 13+"
+  },
+  "footer": {
+    "tagline": "Die Zukunft der sicheren und privaten Kommunikation.",
+    "navigation": "Navigation",
+    "links": ["Über uns", "Blog", "Kontakt"],
+    "legalTitle": "Rechtliches",
+    "legal": ["Datenschutzrichtlinie", "Nutzungsbedingungen"],
+    "social": "Soziale Netzwerke",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "admin": {
+    "title": "Admin-Panel",
+    "subtitle": "Download-Link verwalten",
+    "passwordLabel": "Passwort",
+    "loginButton": "Anmelden",
+    "apkLinkLabel": "APK-Datei-Link",
+    "saveButton": "Speichern",
+    "logoutButton": "Abmelden",
+    "backToSite": "Zurück zur Hauptseite",
+    "error": {
+      "wrongPassword": "Falsches Passwort.",
+      "saveFailed": "Fehler beim Speichern des Links."
+    },
+    "success": {
+      "linkSaved": "Link erfolgreich gespeichert!"
+    }
+  }
+}

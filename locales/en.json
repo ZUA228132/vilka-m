@@ -1,0 +1,128 @@
+{
+  "header": {
+    "connectionStatus": "Connection Secured",
+    "nav": {
+      "features": "Features",
+      "security": "Security",
+      "testimonials": "Reviews"
+    },
+    "cta": "Get Started"
+  },
+  "hero": {
+    "badge": "Next-Generation Private Messenger",
+    "title": {
+      "line1": "Communication,",
+      "line2": "fortified and reimagined."
+    },
+    "description": "Vilka is the synergy of cutting-edge encryption and an intuitive interface. Communicate freely, knowing your privacy is our unbreakable priority.",
+    "ctaPrimary": "Download Securely",
+    "ctaSecondary": "Learn More",
+    "chatHeader": {
+      "name": "Alice",
+      "status": "online"
+    },
+    "chatMessages": [
+      { "text": "Are you sure it's safe here?", "isSender": false, "delay": 0.5 },
+      { "text": "Absolutely. End-to-end encryption, no one can read this.", "isSender": true, "delay": 1.5 },
+      { "text": "Great! Not even metadata?", "isSender": false, "delay": 2.5 }
+    ],
+    "finalMessage": { "text": "Yes, Vilka stores nothing. Complete anonymity.", "isSender": true, "delay": 4.5 }
+  },
+  "features": {
+    "title": "The New Standard of Privacy",
+    "description": "Vilka is not just another messenger. It's a fortress for your thoughts, built with uncompromising security features.",
+    "cards": [
+      {
+        "title": "Quantum-Resistant Encryption",
+        "description": "Our end-to-end encryption protocol is built to protect against threats of today and tomorrow, safeguarding your data from any attack."
+      },
+      {
+        "title": "Decentralized Network",
+        "description": "Vilka operates on a P2P network, meaning there are no central servers to store data. Your conversations belong only to you."
+      },
+      {
+        "title": "Complete Anonymity",
+        "description": "Sign up without a phone number or email. Your identity is never tied to your account, ensuring total privacy."
+      },
+      {
+        "title": "Lightning-Fast Speed",
+        "description": "Vilka is designed for maximum performance, delivering messages instantly without draining your battery or excess data."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Unbreakable Shield",
+    "title": "Security by default, not as a compromise.",
+    "description": "From the very first line of code, Vilka was designed with a zero-trust model. Every message, call, and file is encrypted with its own unique key within a double-ratchet system, providing perfect forward secrecy.",
+    "points": [
+      { "text": "<strong>No Metadata:</strong> We don't know who, when, or for how long you communicate." },
+      { "text": "<strong>Open Source:</strong> Our code is transparent and regularly audited by independent security experts." },
+      { "text": "<strong>IP Address Masking:</strong> Protect your location and identity with built-in onion routing features." }
+    ]
+  },
+  "testimonials": {
+    "title": "Trusted by Privacy Experts",
+    "description": "Don't take our word for it. Hear what industry professionals and privacy-conscious users are saying about Vilka.",
+    "cards": [
+      {
+        "quote": "I've tried all the 'secure' messengers. Vilka is the first one that truly delivers on the promise of absolute privacy. It's priceless.",
+        "name": "Alex Petrov",
+        "title": "Cybersecurity Analyst",
+        "avatarUrl": "https://picsum.photos/seed/person1/100/100"
+      },
+      {
+        "quote": "The interface is incredibly clean and intuitive, which I didn't expect from such a security-focused app. It's powerful and enjoyable to use.",
+        "name": "Maria Ivanova",
+        "title": "UX/UI Designer",
+        "avatarUrl": "https://picsum.photos/seed/person2/100/100"
+      },
+      {
+        "quote": "As a journalist, protecting my sources is paramount. Vilka's decentralization and anonymous registration have fundamentally changed my work.",
+        "name": "Dmitry Sokolov",
+        "title": "Investigative Journalist",
+        "avatarUrl": "https://picsum.photos/seed/person3/100/100"
+      }
+    ]
+  },
+  "download": {
+    "title": "Join the security revolution.",
+    "description": "Reclaim control over your digital conversations. Download Vilka today and experience true communication privacy on your favorite platform.",
+    "ios": {
+      "soon": "Coming soon to"
+    },
+    "apk": {
+      "direct": "Download directly",
+      "file": "APK file"
+    },
+    "rustore": {
+      "available": "GET IT ON"
+    },
+    "androidRequirement": "Requires Android 13+"
+  },
+  "footer": {
+    "tagline": "The future of secure and private communication.",
+    "navigation": "Navigation",
+    "links": ["About Us", "Blog", "Contact"],
+    "legalTitle": "Legal",
+    "legal": ["Privacy Policy", "Terms of Service"],
+    "social": "Social",
+    "copyright": "All rights reserved."
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "subtitle": "Manage Download Link",
+    "passwordLabel": "Password",
+    "loginButton": "Login",
+    "apkLinkLabel": "APK File Link",
+    "saveButton": "Save",
+    "logoutButton": "Logout",
+    "backToSite": "Back to main site",
+    "error": {
+      "wrongPassword": "Incorrect password.",
+      "saveFailed": "Error saving the link."
+    },
+    "success": {
+      "linkSaved": "Link saved successfully!"
+    }
+  }
+}
