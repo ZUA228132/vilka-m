@@ -1,5 +1,72 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
+// --- START OF EMBEDDED TRANSLATIONS ---
+
+const ruTranslations = {
+  "header": { "connectionStatus": "Соединение защищено", "nav": { "features": "Возможности", "security": "Безопасность", "testimonials": "Отзывы" }, "cta": "Начать" },
+  "hero": { "badge": "Приватный мессенджер нового поколения", "title": { "line1": "Общение,", "line2": "укрепленное и переосмысленное." }, "description": "Vilka — это синергия передового шифрования и интуитивно понятного интерфейса. Общайтесь свободно, зная, что ваша приватность — наш нерушимый приоритет.", "ctaPrimary": "Скачать безопасно", "ctaSecondary": "Узнать больше", "chatHeader": { "name": "Алиса", "status": "в сети" }, "chatMessages": [{ "text": "Ты уверен, что здесь безопасно?", "isSender": false, "delay": 0.5 }, { "text": "Абсолютно. Сквозное шифрование, никто не сможет прочитать.", "isSender": true, "delay": 1.5 }, { "text": "Отлично! Даже метаданные?", "isSender": false, "delay": 2.5 }], "finalMessage": { "text": "Да, Vilka ничего не хранит. Полная анонимность.", "isSender": true, "delay": 4.5 } },
+  "features": { "title": "Новый стандарт приватности", "description": "Vilka — это не просто очередной мессенджер. Это крепость для ваших мыслей, созданная с бескомпромиссными функциями безопасности.", "cards": [{ "title": "Квантово-устойчивое шифрование", "description": "Наш протокол сквозного шифрования создан для защиты от угроз сегодняшнего и завтрашнего дня, оберегая ваши данные от любых атак." }, { "title": "Децентрализованная сеть", "description": "Vilka работает в P2P-сети, что означает отсутствие центральных серверов для хранения данных. Ваши разговоры принадлежат только вам." }, { "title": "Полная анонимность", "description": "Регистрация без номера телефона или email. Ваша личность никогда не привязывается к аккаунту, обеспечивая полную конфиденциальность." }, { "title": "Молниеносная скорость", "description": "Vilka создан для максимальной производительности, доставляя сообщения мгновенно и не расходуя заряд батареи или лишний трафик." }] },
+  "security": { "badge": "Нерушимый щит", "title": "Безопасность по умолчанию, а не в виде компромисса.", "description": "С самой первой строчки кода Vilka проектировался по модели нулевого доверия. Каждое сообщение, звонок и файл шифруется собственным уникальным ключом в рамках системы двойного храповика, обеспечивая совершенную прямую секретность.", "points": [{ "text": "<strong>Никаких метаданных:</strong> Мы не знаем, с кем, когда и как долго вы общаетесь." }, { "text": "<strong>Открытый исходный код:</strong> Наш код прозрачен и регулярно проверяется независимыми экспертами по безопасности." }, { "text": "<strong>Маскировка IP-адреса:</strong> Защитите свое местоположение и личность с помощью встроенных функций луковой маршрутизации." }] },
+  "testimonials": { "title": "Нам доверяют эксперты по приватности", "description": "Не верьте нам на слово. Послушайте, что говорят о Vilka профессионалы индустрии и пользователи, заботящиеся о своей анонимности.", "cards": [{ "quote": "Я перепробовал все 'безопасные' мессенджеры. Vilka — первый, который действительно выполняет обещание абсолютной приватности. Это бесценно.", "name": "Алексей Петров", "title": "Аналитик по кибербезопасности", "avatarUrl": "https://picsum.photos/seed/person1/100/100" }, { "quote": "Интерфейс невероятно чистый и интуитивный, чего я не ожидала от такого сфокусированного на безопасности приложения. Он мощный и приятный в использовании.", "name": "Мария Иванова", "title": "UX/UI Дизайнер", "avatarUrl": "https://picsum.photos/seed/person2/100/100" }, { "quote": "Как для журналиста, защита моих источников — превыше всего. Децентрализованность и анонимная регистрация в Vilka кардинально изменили мою работу.", "name": "Дмитрий Соколов", "title": "Журналист-расследователь", "avatarUrl": "https://picsum.photos/seed/person3/100/100" }] },
+  "download": { "title": "Присоединяйтесь к революции безопасности.", "description": "Верните себе контроль над цифровыми разговорами. Скачайте Vilka сегодня и ощутите настоящую приватность общения на вашей любимой платформе.", "ios": { "soon": "Скоро в" }, "apk": { "direct": "Скачать напрямую", "file": "APK-файл" }, "rustore": { "available": "ДОСТУПНО В" }, "androidRequirement": "Для Android требуется версия 13+" },
+  "footer": { "tagline": "Будущее безопасного и приватного общения.", "navigation": "Навигация", "links": ["О нас", "Блог", "Контакты"], "legalTitle": "Право", "legal": ["Политика конфиденциальности", "Условия использования"], "social": "Соцсети", "copyright": "Все права защищены." },
+  "admin": { "title": "Панель Администратора", "subtitle": "Управление ссылкой для скачивания", "passwordLabel": "Пароль", "loginButton": "Войти", "apkLinkLabel": "Ссылка на APK-файл", "saveButton": "Сохранить", "logoutButton": "Выйти", "backToSite": "Вернуться на главный сайт", "error": { "wrongPassword": "Неверный пароль.", "saveFailed": "Ошибка при сохранении ссылки." }, "success": { "linkSaved": "Ссылка успешно сохранена!" } }
+};
+
+const enTranslations = {
+  "header": { "connectionStatus": "Connection Secured", "nav": { "features": "Features", "security": "Security", "testimonials": "Reviews" }, "cta": "Get Started" },
+  "hero": { "badge": "Next-Generation Private Messenger", "title": { "line1": "Communication,", "line2": "fortified and reimagined." }, "description": "Vilka is the synergy of cutting-edge encryption and an intuitive interface. Communicate freely, knowing your privacy is our unbreakable priority.", "ctaPrimary": "Download Securely", "ctaSecondary": "Learn More", "chatHeader": { "name": "Alice", "status": "online" }, "chatMessages": [{ "text": "Are you sure it's safe here?", "isSender": false, "delay": 0.5 }, { "text": "Absolutely. End-to-end encryption, no one can read this.", "isSender": true, "delay": 1.5 }, { "text": "Great! Not even metadata?", "isSender": false, "delay": 2.5 }], "finalMessage": { "text": "Yes, Vilka stores nothing. Complete anonymity.", "isSender": true, "delay": 4.5 } },
+  "features": { "title": "The New Standard of Privacy", "description": "Vilka is not just another messenger. It's a fortress for your thoughts, built with uncompromising security features.", "cards": [{ "title": "Quantum-Resistant Encryption", "description": "Our end-to-end encryption protocol is built to protect against threats of today and tomorrow, safeguarding your data from any attack." }, { "title": "Decentralized Network", "description": "Vilka operates on a P2P network, meaning there are no central servers to store data. Your conversations belong only to you." }, { "title": "Complete Anonymity", "description": "Sign up without a phone number or email. Your identity is never tied to your account, ensuring total privacy." }, { "title": "Lightning-Fast Speed", "description": "Vilka is designed for maximum performance, delivering messages instantly without draining your battery or excess data." }] },
+  "security": { "badge": "Unbreakable Shield", "title": "Security by default, not as a compromise.", "description": "From the very first line of code, Vilka was designed with a zero-trust model. Every message, call, and file is encrypted with its own unique key within a double-ratchet system, providing perfect forward secrecy.", "points": [{ "text": "<strong>No Metadata:</strong> We don't know who, when, or for how long you communicate." }, { "text": "<strong>Open Source:</strong> Our code is transparent and regularly audited by independent security experts." }, { "text": "<strong>IP Address Masking:</strong> Protect your location and identity with built-in onion routing features." }] },
+  "testimonials": { "title": "Trusted by Privacy Experts", "description": "Don't take our word for it. Hear what industry professionals and privacy-conscious users are saying about Vilka.", "cards": [{ "quote": "I've tried all the 'secure' messengers. Vilka is the first one that truly delivers on the promise of absolute privacy. It's priceless.", "name": "Alex Petrov", "title": "Cybersecurity Analyst", "avatarUrl": "https://picsum.photos/seed/person1/100/100" }, { "quote": "The interface is incredibly clean and intuitive, which I didn't expect from such a security-focused app. It's powerful and enjoyable to use.", "name": "Maria Ivanova", "title": "UX/UI Designer", "avatarUrl": "https://picsum.photos/seed/person2/100/100" }, { "quote": "As a journalist, protecting my sources is paramount. Vilka's decentralization and anonymous registration have fundamentally changed my work.", "name": "Dmitry Sokolov", "title": "Investigative Journalist", "avatarUrl": "https://picsum.photos/seed/person3/100/100" }] },
+  "download": { "title": "Join the security revolution.", "description": "Reclaim control over your digital conversations. Download Vilka today and experience true communication privacy on your favorite platform.", "ios": { "soon": "Coming soon to" }, "apk": { "direct": "Download directly", "file": "APK file" }, "rustore": { "available": "GET IT ON" }, "androidRequirement": "Requires Android 13+" },
+  "footer": { "tagline": "The future of secure and private communication.", "navigation": "Navigation", "links": ["About Us", "Blog", "Contact"], "legalTitle": "Legal", "legal": ["Privacy Policy", "Terms of Service"], "social": "Social", "copyright": "All rights reserved." },
+  "admin": { "title": "Admin Panel", "subtitle": "Manage Download Link", "passwordLabel": "Password", "loginButton": "Login", "apkLinkLabel": "APK File Link", "saveButton": "Save", "logoutButton": "Logout", "backToSite": "Back to main site", "error": { "wrongPassword": "Incorrect password.", "saveFailed": "Error saving the link." }, "success": { "linkSaved": "Link saved successfully!" } }
+};
+
+const ukTranslations = {
+  "header": { "connectionStatus": "З'єднання захищено", "nav": { "features": "Можливості", "security": "Безпека", "testimonials": "Відгуки" }, "cta": "Почати" },
+  "hero": { "badge": "Приватний месенджер нового покоління", "title": { "line1": "Спілкування,", "line2": "зміцнене та переосмислене." }, "description": "Vilka — це синергія передового шифрування та інтуїтивно зрозумілого інтерфейсу. Спілкуйтеся вільно, знаючи, що ваша приватність — наш непорушний пріоритет.", "ctaPrimary": "Завантажити безпечно", "ctaSecondary": "Дізнатися більше", "chatHeader": { "name": "Аліса", "status": "в мережі" }, "chatMessages": [{ "text": "Ти впевнений, що тут безпечно?", "isSender": false, "delay": 0.5 }, { "text": "Абсолютно. Наскрізне шифрування, ніхто не зможе прочитати.", "isSender": true, "delay": 1.5 }, { "text": "Чудово! Навіть метадані?", "isSender": false, "delay": 2.5 }], "finalMessage": { "text": "Так, Vilka нічого не зберігає. Повна анонімність.", "isSender": true, "delay": 4.5 } },
+  "features": { "title": "Новий стандарт приватності", "description": "Vilka — це не просто черговий месенджер. Це фортеця для ваших думок, створена з безкомпромісними функціями безпеки.", "cards": [{ "title": "Квантово-стійке шифрування", "description": "Наш протокол наскрізного шифрування створений для захисту від загроз сьогодення та майбутнього, оберігаючи ваші дані від будь-яких атак." }, { "title": "Децентралізована мережа", "description": "Vilka працює в P2P-мережі, що означає відсутність центральних серверів для зберігання даних. Ваші розмови належать тільки вам." }, { "title": "Повна анонімність", "description": "Реєстрація без номера телефону чи email. Ваша особистість ніколи не прив'язується до акаунту, забезпечуючи повну конфіденційність." }, { "title": "Блискавична швидкість", "description": "Vilka створений для максимальної продуктивності, доставляючи повідомлення миттєво і не витрачаючи заряд батареї чи зайвий трафік." }] },
+  "security": { "badge": "Незламний щит", "title": "Безпека за замовчуванням, а не як компроміс.", "description": "З самого першого рядка коду Vilka проектувався за моделлю нульової довіри. Кожне повідомлення, дзвінок і файл шифрується власним унікальним ключем у рамках системи подвійного храповика, забезпечуючи досконалу пряму секретність.", "points": [{ "text": "<strong>Жодних метаданих:</strong> Ми не знаємо, з ким, коли і як довго ви спілкуєтеся." }, { "text": "<strong>Відкритий вихідний код:</strong> Наш код прозорий і регулярно перевіряється незалежними експертами з безпеки." }, { "text": "<strong>Маскування IP-адреси:</strong> Захистіть своє місцезнаходження та особистість за допомогою вбудованих функцій цибулевої маршрутизації." }] },
+  "testimonials": { "title": "Нам довіряють експерти з приватності", "description": "Не вірте нам на слово. Послухайте, що говорять про Vilka професіонали індустрії та користувачі, які дбають про свою анонімність.", "cards": [{ "quote": "Я спробував усі 'безпечні' месенджери. Vilka — перший, який справді виконує обіцянку абсолютної приватності. Це безцінно.", "name": "Олексій Петров", "title": "Аналітик з кібербезпеки", "avatarUrl": "https://picsum.photos/seed/person1/100/100" }, { "quote": "Інтерфейс неймовірно чистий та інтуїтивний, чого я не очікувала від такого сфокусованого на безпеці додатку. Він потужний і приємний у використанні.", "name": "Марія Іванова", "title": "UX/UI Дизайнерка", "avatarUrl": "https://picsum.photos/seed/person2/100/100" }, { "quote": "Як для журналіста, захист моїх джерел — понад усе. Децентралізованість та анонімна реєстрація у Vilka кардинально змінили мою роботу.", "name": "Дмитро Соколов", "title": "Журналіст-розслідувач", "avatarUrl": "https://picsum.photos/seed/person3/100/100" }] },
+  "download": { "title": "Приєднуйтесь до революції безпеки.", "description": "Поверніть собі контроль над цифровими розмовами. Завантажте Vilka сьогодні та відчуйте справжню приватність спілкування на вашій улюбленій платформі.", "ios": { "soon": "Незабаром у" }, "apk": { "direct": "Завантажити напряму", "file": "APK-файл" }, "rustore": { "available": "ДОСТУПНО В" }, "androidRequirement": "Потрібна версія Android 13+" },
+  "footer": { "tagline": "Майбутнє безпечного та приватного спілкування.", "navigation": "Навігація", "links": ["Про нас", "Блог", "Контакти"], "legalTitle": "Право", "legal": ["Політика конфіденційності", "Умови використання"], "social": "Соцмережі", "copyright": "Всі права захищено." },
+  "admin": { "title": "Панель Адміністратора", "subtitle": "Керування посиланням для завантаження", "passwordLabel": "Пароль", "loginButton": "Увійти", "apkLinkLabel": "Посилання на APK-файл", "saveButton": "Зберегти", "logoutButton": "Вийти", "backToSite": "Повернутися на головний сайт", "error": { "wrongPassword": "Невірний пароль.", "saveFailed": "Помилка при збереженні посилання." }, "success": { "linkSaved": "Посилання успішно збережено!" } }
+};
+
+const deTranslations = {
+  "header": { "connectionStatus": "Verbindung gesichert", "nav": { "features": "Funktionen", "security": "Sicherheit", "testimonials": "Bewertungen" }, "cta": "Starten" },
+  "hero": { "badge": "Der private Messenger der nächsten Generation", "title": { "line1": "Kommunikation,", "line2": "gestärkt und neu gedacht." }, "description": "Vilka ist die Synergie aus modernster Verschlüsselung und einer intuitiven Benutzeroberfläche. Kommunizieren Sie frei, in dem Wissen, dass Ihre Privatsphäre unsere unumstößliche Priorität ist.", "ctaPrimary": "Sicher herunterladen", "ctaSecondary": "Mehr erfahren", "chatHeader": { "name": "Alice", "status": "online" }, "chatMessages": [{ "text": "Bist du sicher, dass es hier sicher ist?", "isSender": false, "delay": 0.5 }, { "text": "Absolut. Ende-zu-Ende-Verschlüsselung, niemand kann das lesen.", "isSender": true, "delay": 1.5 }, { "text": "Großartig! Nicht einmal Metadaten?", "isSender": false, "delay": 2.5 }], "finalMessage": { "text": "Ja, Vilka speichert nichts. Völlige Anonymität.", "isSender": true, "delay": 4.5 } },
+  "features": { "title": "Der neue Standard der Privatsphäre", "description": "Vilka ist nicht nur ein weiterer Messenger. Es ist eine Festung für Ihre Gedanken, gebaut mit kompromisslosen Sicherheitsfunktionen.", "cards": [{ "title": "Quantenresistente Verschlüsselung", "description": "Unser Ende-zu-Ende-Verschlüsselungsprotokoll schützt vor den Bedrohungen von heute und morgen und sichert Ihre Daten vor jedem Angriff." }, { "title": "Dezentrales Netzwerk", "description": "Vilka läuft auf einem P2P-Netzwerk, was bedeutet, dass es keine zentralen Server gibt, auf denen Daten gespeichert werden. Ihre Gespräche gehören nur Ihnen." }, { "title": "Vollständige Anonymität", "description": "Registrieren Sie sich ohne Telefonnummer oder E-Mail. Ihre Identität wird niemals mit Ihrem Konto verknüpft, was absolute Privatsphäre gewährleistet." }, { "title": "Blitzschnelle Geschwindigkeit", "description": "Vilka ist auf maximale Leistung ausgelegt, liefert Nachrichten sofort und verbraucht weder Akku noch überflüssige Daten." }] },
+  "security": { "badge": "Unzerbrechlicher Schild", "title": "Sicherheit als Standard, nicht als Kompromiss.", "description": "Von der allerersten Codezeile an wurde Vilka nach einem Zero-Trust-Modell entwickelt. Jede Nachricht, jeder Anruf und jede Datei wird mit einem eigenen einzigartigen Schlüssel in einem Double-Ratchet-System verschlüsselt, was perfekte Forward Secrecy bietet.", "points": [{ "text": "<strong>Keine Metadaten:</strong> Wir wissen nicht, mit wem, wann oder wie lange Sie kommunizieren." }, { "text": "<strong>Open Source:</strong> Unser Code ist transparent und wird regelmäßig von unabhängigen Sicherheitsexperten überprüft." }, { "text": "<strong>IP-Adressen-Maskierung:</strong> Schützen Sie Ihren Standort und Ihre Identität mit integrierten Onion-Routing-Funktionen." }] },
+  "testimonials": { "title": "Vertraut von Datenschutz-Experten", "description": "Verlassen Sie sich nicht nur auf unser Wort. Hören Sie, was Branchenexperten und datenschutzbewusste Benutzer über Vilka sagen.", "cards": [{ "quote": "Ich habe alle 'sicheren' Messenger ausprobiert. Vilka ist der erste, der das Versprechen absoluter Privatsphäre wirklich einhält. Das ist unbezahlbar.", "name": "Alex Schmidt", "title": "Cybersecurity-Analyst", "avatarUrl": "https://picsum.photos/seed/person1/100/100" }, { "quote": "Die Benutzeroberfläche ist unglaublich sauber und intuitiv, was ich von einer so sicherheitsorientierten App nicht erwartet hätte. Sie ist leistungsstark und angenehm zu bedienen.", "name": "Maria Meier", "title": "UX/UI-Designerin", "avatarUrl": "https://picsum.photos/seed/person2/100/100" }, { "quote": "Als Journalist ist der Schutz meiner Quellen von größter Bedeutung. Vilkas Dezentralisierung und anonyme Registrierung haben meine Arbeit grundlegend verändert.", "name": "Dmitri Weber", "title": "Investigativjournalist", "avatarUrl": "https://picsum.photos/seed/person3/100/100" }] },
+  "download": { "title": "Schließen Sie sich der Sicherheitsrevolution an.", "description": "Holen Sie sich die Kontrolle über Ihre digitalen Gespräche zurück. Laden Sie Vilka noch heute herunter und erleben Sie echte Privatsphäre bei der Kommunikation auf Ihrer Lieblingsplattform.", "ios": { "soon": "Bald im" }, "apk": { "direct": "Direkt herunterladen", "file": "APK-Datei" }, "rustore": { "available": "VERFÜGBAR IN" }, "androidRequirement": "Erfordert Android 13+" },
+  "footer": { "tagline": "Die Zukunft der sicheren und privaten Kommunikation.", "navigation": "Navigation", "links": ["Über uns", "Blog", "Kontakt"], "legalTitle": "Rechtliches", "legal": ["Datenschutzrichtlinie", "Nutzungsbedingungen"], "social": "Soziale Netzwerke", "copyright": "Alle Rechte vorbehalten." },
+  "admin": { "title": "Admin-Panel", "subtitle": "Download-Link verwalten", "passwordLabel": "Passwort", "loginButton": "Anmelden", "apkLinkLabel": "APK-Datei-Link", "saveButton": "Speichern", "logoutButton": "Abmelden", "backToSite": "Zurück zur Hauptseite", "error": { "wrongPassword": "Falsches Passwort.", "saveFailed": "Fehler beim Speichern des Links." }, "success": { "linkSaved": "Link erfolgreich gespeichert!" } }
+};
+
+const tgTranslations = {
+  "header": { "connectionStatus": "Пайвастшавӣ ҳифз шудааст", "nav": { "features": "Имкониятҳо", "security": "Амният", "testimonials": "Шарҳҳо" }, "cta": "Оғоз" },
+  "hero": { "badge": "Паёмрасони хусусии насли нав", "title": { "line1": "Муошират,", "line2": "тақвиятёфта ва аз нав андешидашуда." }, "description": "Vilka — ин синергияи рамзгузории пешрафта ва интерфейси интуитивӣ мебошад. Озодона муошират кунед, донистани он ки махфияти шумо афзалияти шикастнопазири мост.", "ctaPrimary": "Боргирии бехатар", "ctaSecondary": "Маълумоти бештар", "chatHeader": { "name": "Алиса", "status": "онлайн" }, "chatMessages": [{ "text": "Шумо боварӣ доред, ки дар ин ҷо бехатар аст?", "isSender": false, "delay": 0.5 }, { "text": "Албатта. Рамзгузории интиҳо ба интиҳо, ҳеҷ кас хонда наметавонад.", "isSender": true, "delay": 1.5 }, { "text": "Аъло! Ҳатто метамаълумот?", "isSender": false, "delay": 2.5 }], "finalMessage": { "text": "Бале, Vilka чизеро нигоҳ намедорад. Номаълумии комил.", "isSender": true, "delay": 4.5 } },
+  "features": { "title": "Стандарти нави махфият", "description": "Vilka — ин на танҳо як паёмрасони дигар аст. Ин қалъаест барои фикрҳои шумо, ки бо функсияҳои бехатарии бесобиқа сохта шудааст.", "cards": [{ "title": "Рамзгузории ба квант тобовар", "description": "Протоколи рамзгузории интиҳо ба интиҳои мо барои муҳофизат аз таҳдидҳои имрӯза ва фардо сохта шудааст, ки маълумоти шуморо аз ҳама гуна ҳамлаҳо эмин медорад." }, { "title": "Шабакаи ғайримарказонидашуда", "description": "Vilka дар шабакаи P2P кор мекунад, ки маънои онро дорад, ки серверҳои марказӣ барои нигоҳдории маълумот вуҷуд надоранд. Сӯҳбатҳои шумо танҳо ба шумо тааллуқ доранд." }, { "title": "Номаълумии комил", "description": "Бақайдгирӣ бе рақами телефон ё почтаи электронӣ. Шахсияти шумо ҳеҷ гоҳ ба ҳисоби шумо вобаста нест, ки махфияти комилро таъмин мекунад." }, { "title": "Суръати барқосо", "description": "Vilka барои иҷрои ҳадди аксар тарҳрезӣ шудааст, паёмҳоро фавран мерасонад ва заряди батарея ё трафики зиёдатиро сарф намекунад." }] },
+  "security": { "badge": "Сипари шикастнопазир", "title": "Амният бо нобаёнӣ, на ҳамчун созиш.", "description": "Аз сатри аввалини код, Vilka аз рӯи модели эътимоди сифрӣ тарҳрезӣ шудааст. Ҳар як паём, занг ва файл бо калиди беназири худ дар доираи системаи дугонаи храповик рамзгузорӣ шудааст, ки махфияти комили пешрафтаро таъмин мекунад.", "points": [{ "text": "<strong>Бе метамаълумот:</strong> Мо намедонем, ки шумо бо кӣ, кай ва чӣ қадар муошират мекунед." }, { "text": "<strong>Манбаи кушода:</strong> Коди мо шаффоф аст ва мунтазам аз ҷониби коршиносони мустақили амниятӣ тафтиш карда мешавад." }, { "text": "<strong>Ниқоб кардани суроғаи IP:</strong> Ҷойгиршавӣ ва шахсияти худро бо ёрии функсияҳои дарунсохти масири пиёзӣ муҳофизат кунед." }] },
+  "testimonials": { "title": "Коршиносони махфият ба мо эътимод доранд", "description": "Ба суханони мо бовар накунед. Гӯш диҳед, ки мутахассисони соҳа ва корбароне, ки дар бораи номаълумии худ ғамхорӣ мекунанд, дар бораи Vilka чӣ мегӯянд.", "cards": [{ "quote": "Ман ҳама паёмрасонҳои 'бехатар'-ро санҷидаам. Vilka аввалин аст, ки дар ҳақиқат ваъдаи махфияти мутлақро иҷро мекунад. Ин бебаҳост.", "name": "Алексей Петров", "title": "Таҳлилгари киберамният", "avatarUrl": "https://picsum.photos/seed/person1/100/100" }, { "quote": "Интерфейс бениҳоят тоза ва интуитивӣ аст, ки ман аз чунин як барномаи ба амният нигаронидашуда интизор набудам. Он ҳам пурқудрат ва ҳам гуворо барои истифода аст.", "name": "Мария Иванова", "title": "Дизайнери UX/UI", "avatarUrl": "https://picsum.photos/seed/person2/100/100" }, { "quote": "Ҳамчун рӯзноманигор, ҳифзи манбаъҳои ман аз ҳама муҳимтар аст. Ғайримарказикунонӣ ва бақайдгирии номаълум дар Vilka кори маро ба куллӣ тағйир доданд.", "name": "Дмитрий Соколов", "title": "Рӯзноманигори тафтишотӣ", "avatarUrl": "https://picsum.photos/seed/person3/100/100" }] },
+  "download": { "title": "Ба инқилоби амният ҳамроҳ шавед.", "description": "Назоратро аз болои сӯҳбатҳои рақамии худ баргардонед. Vilka-ро имрӯз боргирӣ кунед ва махфияти воқеии муоширатро дар платформаи дӯстдоштаи худ эҳсос кунед.", "ios": { "soon": "Ба наздикӣ дар" }, "apk": { "direct": "Боргирии мустақим", "file": "Файли APK" }, "rustore": { "available": "ДАСТРАС ДАР" }, "androidRequirement": "Версияи Android 13+ лозим аст" },
+  "footer": { "tagline": "Ояндаи муоширати бехатар ва хусусӣ.", "navigation": "Навигатсия", "links": ["Дар бораи мо", "Блог", "Тамос"], "legalTitle": "Ҳуқуқ", "legal": ["Сиёсати махфият", "Шартҳои истифода"], "social": "Шабакаҳои иҷтимоӣ", "copyright": "Ҳамаи ҳуқуқҳо ҳифз шудаанд." },
+  "admin": { "title": "Панели Администратор", "subtitle": "Идоракунии истиноди боргирӣ", "passwordLabel": "Парол", "loginButton": "Ворид шудан", "apkLinkLabel": "Истинод ба файли APK", "saveButton": "Захира кардан", "logoutButton": "Баромадан", "backToSite": "Бозгашт ба сайти асосӣ", "error": { "wrongPassword": "Парол нодуруст аст.", "saveFailed": "Хатогӣ ҳангоми захираи истинод." }, "success": { "linkSaved": "Истинод бомуваффақият захира карда шуд!" } }
+};
+
+const allTranslations: Record<string, any> = {
+    ru: ruTranslations,
+    en: enTranslations,
+    uk: ukTranslations,
+    de: deTranslations,
+    tg: tgTranslations,
+};
+
+// --- END OF EMBEDDED TRANSLATIONS ---
+
 const supportedLanguages = ['ru', 'en', 'uk', 'de', 'tg'];
 
 interface LanguageContextType {
@@ -29,36 +96,6 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   };
 
   const [language, setLanguageState] = useState<string>(getInitialLanguage);
-  const [translations, setTranslations] = useState<any>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const loadTranslations = async () => {
-      setIsLoading(true);
-      try {
-        // FIX: Use absolute path for Vercel deployment
-        const response = await fetch(`/locales/${language}.json`);
-        if (!response.ok) {
-          throw new Error(`Failed to load locale file for: ${language}`);
-        }
-        const data = await response.json();
-        setTranslations(data);
-      } catch (error) {
-        console.error(error);
-        // If the chosen language fails, attempt to fall back to a default.
-        // This prevents a total app crash if a single locale file is missing.
-        if (language !== 'ru') {
-            setLanguage('ru');
-        } else {
-            setTranslations({}); // Prevent crash if even default fails
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadTranslations();
-  }, [language]);
 
   const setLanguage = (lang: string) => {
     if (supportedLanguages.includes(lang) && lang !== language) {
@@ -68,27 +105,19 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   };
 
   const t = (key: string, options: { returnObjects?: boolean } = {}): any => {
-    if (isLoading || !translations) {
-      // During load, return an empty value to prevent crashes (e.g., from .map)
-      // or return the key itself for debugging.
-      const value = getNestedValue(translations, key);
-      if (value) return value; // Return value if already loaded
-      return options.returnObjects ? [] : key;
-    }
+    const translations = allTranslations[language] || allTranslations['ru'];
     
     const value = getNestedValue(translations, key);
     if (value === undefined) {
       console.warn(`Translation key not found: ${key} for language ${language}`);
+      // Fallback to Russian if key not found in current language
+      const fallbackValue = getNestedValue(allTranslations['ru'], key);
+      if(fallbackValue !== undefined) return fallbackValue;
+      
       return options.returnObjects ? [] : key;
     }
     return value;
   };
-
-  // Crucially, we don't render the rest of the app until the first
-  // translation file has been successfully loaded.
-  if (isLoading && !translations) {
-    return null; // Or a loading spinner
-  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
